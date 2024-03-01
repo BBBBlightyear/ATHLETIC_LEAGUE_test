@@ -31,7 +31,7 @@ public class register extends HttpServlet {
         ResultSet resultSet=null;
         String Student_ID=req.getParameter("Student_ID");
         try {
-            String sql="select Student_Name,Major from link_team.students where Student_ID=?";
+            String sql="select Student_Name,Major from students where Student_ID=?";
             connection=Druid_Utils.getConnection();
             preparedStatement=connection.prepareStatement(sql);
             preparedStatement.setString(1,Student_ID);
