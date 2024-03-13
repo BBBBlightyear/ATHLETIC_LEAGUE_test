@@ -113,7 +113,7 @@
 
             // Preload iframe before displaying it
             // This allows to calculate iframe content width and height
-            // (note: Due to "Same Origin Policy", you can't get cross domain data).
+            // (note: Due to "Same Origin Policy", you can't get cross entity data).
             preload : true,
 
             // Custom CSS styling for iframe wrapping element

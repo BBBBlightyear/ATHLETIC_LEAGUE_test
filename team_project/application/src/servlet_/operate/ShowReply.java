@@ -1,6 +1,6 @@
 package servlet_.operate;
 
-import Logical_opt.domain.Reply;
+import JdbcOption.entity.Invitation;
 import druid_JDBC_utils.Druid_Utils;
 
 import javax.servlet.ServletException;
@@ -22,7 +22,7 @@ public class ShowReply extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
        String id=(String) req.getSession().getAttribute("Student_ID");
-        List<Reply> list=new ArrayList<Reply>();
+        List<Invitation> list=new ArrayList<Invitation>();
        Connection connection=null;
         PreparedStatement preparedStatement=null;
         ResultSet resultSet=null;
@@ -33,7 +33,7 @@ public class ShowReply extends HttpServlet {
             preparedStatement.setString(1,id);
             resultSet=preparedStatement.executeQuery();
             while (resultSet.next()){
-                list.add(new Reply(resultSet.getString("time_reply"),
+                list.add(new Invitation(resultSet.getString("time_reply"),
                         resultSet.getString("send_id"),
                         resultSet.getString("message")));
             }

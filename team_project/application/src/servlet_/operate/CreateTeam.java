@@ -20,8 +20,8 @@ public class CreateTeam extends HttpServlet {
        HttpSession session= req.getSession();
        String Student_ID_leader=(String) session.getAttribute("Student_ID");
        System.out.println("队长的id为"+Student_ID_leader);
-        logical_op_2.createTeam(TName,Max_Num,Introduction,Student_ID_leader);
-        resp.getWriter().print("<script>alert('创建队伍成功！');"+
+       logical_op_2.createTeam(TName,Max_Num,Introduction,Student_ID_leader);
+       resp.getWriter().print("<script>alert('创建队伍成功！');"+
                 "window.location.href='http://localhost:8080/_war_exploded/home_page.jsp'</script>");
     }
 }

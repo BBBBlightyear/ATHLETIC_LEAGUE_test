@@ -1,7 +1,7 @@
 package servlet_.operate;
 
-import Logical_opt.domain.Application_information;
-import Logical_opt.domain.Student;
+import JdbcOption.entity.TeamApplication;
+import JdbcOption.entity.Student;
 import druid_JDBC_utils.Druid_Utils;
 
 import javax.servlet.ServletException;
@@ -69,7 +69,7 @@ public class DealApply extends HttpServlet {
         //根据申请者学号找到申请者其他信息
 
         //定义申请消息集合
-       List<Application_information> application_list=new ArrayList<>();
+       List<TeamApplication> application_list=new ArrayList<>();
         for(String id:applications.keySet()) {
             try {
                 //String student_Name, String tel, String strong_point, String major
@@ -85,7 +85,7 @@ public class DealApply extends HttpServlet {
                                                     resultSet.getString("Strong_point"),
                                                     resultSet.getString("Major"));
                    String time=applications.get(id);
-                   application_list.add(new Application_information(time,student));
+                   application_list.add(new TeamApplication(time,student));
                 }
             } catch (SQLException e) {
                 throw new RuntimeException(e);
